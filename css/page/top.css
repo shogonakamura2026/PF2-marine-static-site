@@ -1,0 +1,770 @@
+@charset "utf-8";
+
+/* =========================================================
+   top.css
+   責務：
+   - トップページ専用の見た目
+   - 配色 / 背景 / 影 / hover / 視覚演出
+   - 構造は layout.css、画面差分は responsive.css に任せる
+   ========================================================= */
+
+/* =========================================================
+   1) Header visual
+   ========================================================= */
+.site-header{
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #d8e8ee;
+}
+
+.site-header__toggle-text{
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  transform: translateX(-50%);
+  color: #114B5F;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.site-header__toggle-line{
+  background: #114B5F;
+  border-radius: 999px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    background-color 0.3s ease,
+    top 0.3s ease;
+}
+
+.site-header.is-menu-open .site-header__toggle-line:nth-child(1){
+  top: 21px;
+  transform: rotate(45deg);
+}
+
+.site-header.is-menu-open .site-header__toggle-line:nth-child(2){
+  opacity: 0;
+}
+
+.site-header.is-menu-open .site-header__toggle-line:nth-child(3){
+  top: 21px;
+  transform: rotate(-45deg);
+}
+
+.site-header__nav-item a{
+  color: #123E4E;
+}
+
+.site-header__nav-item a:hover{
+  background: rgba(22, 132, 173, 0.06);
+  border-radius: 12px;
+}
+
+.site-header__overlay{
+  background: rgba(15, 23, 42, 0.22);
+}
+
+.site-header__cta{
+  color: #ffffff;
+  background: rgba(14, 127, 167, 0.82);
+  border: 1px solid rgba(11, 108, 136, 0.18);
+}
+
+/* =========================================================
+   2) Hero visual
+   ========================================================= */
+.hero{
+  background: #E6F5F8;
+}
+
+.hero__container{
+  color: #ffffff;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.76) 0%,
+      rgba(203, 233, 240, 0.62) 34%,
+      rgba(124, 197, 221, 0.56) 68%,
+      rgba(43, 123, 159, 0.58) 100%
+    ),
+    url("/img/hero-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 24px 54px rgba(15, 23, 42, 0.10);
+}
+
+.hero__content{
+  background: rgba(10, 96, 129, 0.38);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.10);
+}
+
+.hero__label{
+  margin-bottom: 14px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.hero__title{
+  margin-bottom: 28px;
+  font-size: clamp(2.75rem, 2.15rem + 2vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.12;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+.hero__text{
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.hero__actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.hero__image{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.hero__visual{
+  box-shadow: 0 22px 44px rgba(15, 23, 42, 0.18);
+}
+
+.hero__visual::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.58) 0%,
+    rgba(0, 0, 0, 0.30) 32%,
+    rgba(0, 0, 0, 0.08) 52%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  pointer-events: none;
+}
+
+.hero__visual-title,
+.hero__visual-text{
+  z-index: 2;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+}
+
+.hero__visual-title{
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 72px;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.hero__visual-text{
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   3) Intro visual
+   ========================================================= */
+.intro__box{
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
+}
+
+.intro__eyebrow{
+  margin-bottom: 12px;
+  color: #0f766e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.intro__title{
+  margin-bottom: 14px;
+  color: #0f172a;
+  font-size: clamp(1.75rem, 1.45rem + 0.8vw, 2.375rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.intro__text{
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+.intro__overlay{
+  background: linear-gradient(
+    135deg,
+    rgba(7, 26, 36, 0.58) 0%,
+    rgba(12, 42, 58, 0.42) 45%,
+    rgba(19, 91, 120, 0.36) 100%
+  );
+}
+
+.intro__box--video .intro__eyebrow,
+.intro__box--video .intro__title,
+.intro__box--video .intro__text{
+  color: #ffffff;
+}
+
+.intro__box--video .intro__text{
+  max-width: 52ch;
+}
+
+.intro__social-label{
+  color: #64748b;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.intro__social-link{
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  background: #ffffff;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.intro__social-link:hover{
+  transform: translateY(-1px);
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.10);
+}
+
+/* =========================================================
+   4) Section headings / cards visual
+   ========================================================= */
+.service__eyebrow,
+.about__eyebrow,
+.gallery__eyebrow,
+.news__eyebrow,
+.contact-cta__eyebrow{
+  margin-bottom: 12px;
+  color: #0f766e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.service__title{
+  margin-bottom: 16px;
+  color: #0f172a;
+  font-size: clamp(2.1rem, 1.75rem + 1vw, 3rem);
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+}
+
+.service__text,
+.about__info-text{
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+.service-card{
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.05);
+}
+
+.service-card__title{
+  margin-bottom: 12px;
+  color: #0f172a;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.service-card__text{
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   5) About visual
+   ========================================================= */
+.about{
+  background: #E6F5F8;
+}
+
+.about__title,
+.gallery__title{
+  margin-bottom: 20px;
+  color: #0f172a;
+  font-size: clamp(2rem, 1.6rem + 1vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.about__lead{
+  max-width: 640px;
+  color: #5f7280;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+.about__visual{
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.about__info-title{
+  color: #0f3b4a;
+  font-size: clamp(1.5rem, 1.35rem + 0.5vw, 1.875rem);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.about__point{
+  background: rgba(255, 255, 255, 0.72);
+  color: #35505c;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.about__point::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1787b8;
+  transform: translateY(-50%);
+}
+
+/* =========================================================
+   6) Gallery visual / modal
+   ========================================================= */
+.gallery{
+  background: #eef2f3;
+}
+
+.gallery__text,
+.news__text{
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.75rem;
+  line-height: 1.7;
+}
+
+.gallery__card{
+  border-radius: 18px;
+  background: #dfe7eb;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+.gallery__image{
+  transition: transform 0.6s ease;
+}
+
+.gallery__card:hover .gallery__image,
+.gallery__card:focus-within .gallery__image{
+  transform: scale(1.04);
+}
+
+.gallery__trigger{
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.gallery__trigger:focus-visible{
+  outline: 2px solid rgba(11, 108, 136, 0.5);
+  outline-offset: -2px;
+}
+
+.gallery-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+}
+
+.gallery-modal.is-open{
+  display: block;
+}
+
+.gallery-modal__overlay{
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(15, 23, 42, 0.72);
+  cursor: pointer;
+}
+
+.gallery-modal__dialog{
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 1100px);
+  margin: 50vh auto 0;
+  transform: translateY(-50%);
+  padding: 20px;
+}
+
+.gallery-modal__body{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.gallery-modal__image{
+  display: block;
+  width: 100%;
+  max-height: 80vh;
+  height: auto;
+  object-fit: cover;
+  border-radius: inherit;
+  background: transparent;
+}
+
+.gallery-modal__close{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.88);
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.20);
+}
+
+.gallery-modal__close:hover{
+  background: rgba(15, 23, 42, 1);
+}
+
+/* =========================================================
+   7) News visual
+   ========================================================= */
+.news{
+  background: #E6F5F8;
+}
+
+.news__title{
+  margin: 0;
+  color: #1f4f5d;
+  font-size: clamp(1.9rem, 1.6rem + 0.8vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.news__item{
+  list-style: none;
+}
+
+.news__link{
+  color: inherit;
+  background: #F8FCFD;
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.news__link:hover,
+.news__link:focus-visible{
+  background: #f7f9fa;
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.04),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+
+.news__date{
+  color: #9aa6af;
+  font-size: 0.5625rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.news__item-title{
+  color: #1f4f5d;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.news__link:hover .news__item-title,
+.news__link:focus-visible .news__item-title{
+  color: #0b6c88;
+}
+
+/* =========================================================
+   8) CTA / Contact visual
+   ========================================================= */
+.contact-cta{
+  background: #f3f4f6;
+}
+
+.contact-cta__panel{
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    #16759d 0%,
+    #1684ad 55%,
+    #1d88b4 100%
+  );
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.10);
+}
+
+.contact-cta__title{
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2rem, 1.7rem + 0.7vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.contact-cta__lead{
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+.contact-cta__tel{
+  color: #ffffff;
+  font-size: clamp(1.875rem, 1.72rem + 0.35vw, 2.125rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.contact-cta__button{
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-cta__button--mail{
+  color: #1b7ea6;
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.contact-cta__button--line{
+  color: #ffffff;
+  background: transparent;
+}
+
+.contact-cta__button:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+}
+
+.contact-cta__button--mail:hover{
+  color: #156f95;
+  background: #f8fbfd;
+}
+
+.contact-cta__button--line:hover{
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.contact-cta__shop{
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+}
+
+.contact-cta__shop-name{
+  margin: 0;
+  color: #0d2f43;
+  font-size: clamp(1.75rem, 1.55rem + 0.45vw, 2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.6px rgba(255, 255, 255, 0.45);
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.30),
+    0 2px 8px rgba(15, 23, 42, 0.10);
+}
+
+.contact-cta__shop-row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.contact-cta__shop-label{
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-cta__shop-hours{
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.contact-cta__shop-address{
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+/* =========================================================
+   9) Footer visual
+   ========================================================= */
+.site-footer,
+.site-footer__container{
+  background: #08384a;
+}
+
+.site-footer__copyright{
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.site-footer__nav-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__nav a{
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.site-footer__nav a:hover{
+  opacity: 0.72;
+}
+
+/* =========================================================
+   10) Section bubbles visual
+   ========================================================= */
+.js-bubble-section{
+  position: relative;
+  overflow: hidden;
+}
+
+.section-bubbles{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.section-bubble{
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45),
+    0 6px 18px rgba(15, 23, 42, 0.10);
+  opacity: 0;
+  animation: bubbleFloatOnce 3s ease-out forwards;
+}
+
+@keyframes bubbleFloatOnce{
+  0%{
+    transform: translate3d(0, 0, 0) scale(0.72);
+    opacity: 0;
+  }
+
+  12%{
+    opacity: 0.9;
+  }
+
+  55%{
+    transform: translate3d(12px, -110px, 0) scale(1);
+    opacity: 0.72;
+  }
+
+  100%{
+    transform: translate3d(-10px, -220px, 0) scale(1.12);
+    opacity: 0;
+  }
+}

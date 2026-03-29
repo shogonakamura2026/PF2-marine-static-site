@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>SEA FAMILLE</title>
+  <meta name="description" content="こちらは海をテーマにしたNakamuraのポートフォリオです。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/page/top.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+  <!-- =========================
+       戻るボタン用アンカー
+  ========================== -->
+  <div id="page-top" aria-hidden="true"></div>
+
+  <!-- =========================
+       ヘッダー
+  ========================== -->
+  <header class="site-header">
+    <div class="container site-header__container">
+      <a href="#page-top" class="site-header__brand" aria-label="トップへ戻る">
+        <span class="site-header__logo">SEA FAMILLE</span>
+        <span class="site-header__sub">OKINAWA MARINE SERVICE</span>
+      </a>
+
+      <button
+        class="site-header__toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="メニューを開く"
+      >
+        <span class="site-header__toggle-line"></span>
+        <span class="site-header__toggle-line"></span>
+        <span class="site-header__toggle-line"></span>
+        <span class="site-header__toggle-text">Menu</span>
+      </button>
+
+      <nav
+        class="site-header__nav"
+        id="site-nav"
+        aria-label="グローバルナビゲーション"
+      >
+        <p class="site-header__menu-label">MENU</p>
+
+        <ul class="site-header__nav-list">
+          <li class="site-header__nav-item"><a href="#home">Home</a></li>
+          <li class="site-header__nav-item"><a href="#about">About</a></li>
+          <li class="site-header__nav-item"><a href="#plan">Plan</a></li>
+          <li class="site-header__nav-item"><a href="#gallery">Gallery</a></li>
+          <li class="site-header__nav-item"><a href="#news">News</a></li>
+          <li class="site-header__nav-item"><a href="#access">Access</a></li>
+        </ul>
+
+        <div class="site-header__menu-footer">
+          <a href="#" class="site-header__cta site-header__cta--menu">Contact</a>
+        </div>
+      </nav>
+
+      <a href="#" class="site-header__cta site-header__cta--desktop">Contact</a>
+    </div>
+  </header>
+
+  <button
+    class="site-header__overlay"
+    type="button"
+    aria-label="メニューを閉じる"
+  ></button>
+
+  <!-- =========================
+       ヒーロー
+  ========================== -->
+  <section class="hero" id="home">
+    <div class="container hero__container">
+      <div class="hero__content">
+        <p class="hero__label">OKINAWA / DIVING / RESORT</p>
+        <h1 class="hero__title">
+          海と過ごす<br>
+          やさしい休日。
+        </h1>
+        <p class="hero__text">
+          初心者でも安心して楽しめる沖縄マリン体験。<br>
+          安心で安全な最高プランをご用意しています！
+        </p>
+
+        <div class="hero__actions">
+          <a href="#plan" class="btn btn--primary">プランを見る</a>
+          <a href="#about" class="btn btn--ghost">はじめての方へ</a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <picture>
+          <source srcset="img/mainvisual.webp" type="image/webp">
+          <img
+            src="img/mainvisual.jpg"
+            alt="初心者向け体験プランのイメージ"
+            class="hero__image"
+          >
+        </picture>
+        <h3 class="hero__visual-title">沖縄の海を楽しもう！</h3>
+        <p class="hero__visual-text">ここでしか味わえない素敵な体験</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       導入メッセージ
+  ========================== -->
+  <section class="intro js-bubble-section" aria-labelledby="intro-title">
+    <div class="container">
+      <div class="intro__box intro__box--video">
+        <div class="intro__media" aria-hidden="true">
+          <video
+            class="intro__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          >
+            <source src="video/intro-ocean-loop.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="intro__overlay" aria-hidden="true"></div>
+
+        <div class="intro__content">
+          <p class="intro__eyebrow">Concept</p>
+          <h2 class="intro__title" id="intro-title">
+            沖縄の海を、もっと気軽に楽しめる体験へ
+          </h2>
+          <p class="intro__text">
+            はじめての方でも安心して参加できるように、
+            体験の魅力だけでなく、選びやすさや相談しやすさまで
+            ひと目で伝わるサービスを目指しています。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="intro__social" aria-label="SNSリンク">
+      <p class="intro__social-label">Follow us</p>
+
+      <a href="#" class="intro__social-link" aria-label="Instagram">
+        <img src="img/icon-instagram.svg" alt="" class="intro__social-icon">
+      </a>
+
+      <a href="#" class="intro__social-link" aria-label="X">
+        <img src="img/icon-x.svg" alt="" class="intro__social-icon">
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================
+       サービス紹介
+  ========================== -->
+  <section class="service js-bubble-section" id="plan" aria-labelledby="service-title">
+    <div class="container">
+      <div class="service__header">
+        <p class="service__eyebrow">Service</p>
+        <h2 class="service__title" id="service-title">
+          旅に合わせて選べる、<br>
+          3つの体験
+        </h2>
+        <p class="service__text">
+          はじめての方から経験者まで、
+          目的に合わせて選びやすい体験プランをご用意しています。
+        </p>
+      </div>
+
+      <div class="service__grid">
+        <article class="service-card">
+          <figure class="service-card__media">
+            <picture>
+              <source srcset="img/service-diving.webp" type="image/webp">
+              <img
+                src="img/service-diving.jpg"
+                alt="初心者向けに散策している画像"
+                class="service-card__image"
+              >
+            </picture>
+          </figure>
+
+          <h3 class="service-card__title">①はじめて体験する</h3>
+          <p class="service-card__text">
+            海あそびが初めての方でも参加しやすい、
+            ゆったり楽しめる体験プランです。
+          </p>
+        </article>
+
+        <article class="service-card">
+          <figure class="service-card__media">
+            <picture>
+              <source srcset="img/service-license.webp" type="image/webp">
+              <img
+                src="img/service-license.jpg"
+                alt="透明度の高い海でシュノーケリングを楽しむ様子"
+                class="service-card__image"
+              >
+            </picture>
+          </figure>
+
+          <div class="service-card__body">
+            <h3 class="service-card__title">②経験者向けツアー</h3>
+            <p class="service-card__text">
+              もっと深く海を楽しみたい方に向けた、
+              アクティブな魅力を味わえるツアーです。
+            </p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <figure class="service-card__media">
+            <picture>
+              <source srcset="img/group-activity.webp" type="image/webp">
+              <img
+                src="img/group-activity.jpg"
+                alt="海の講習でライセンス取得を目指す様子"
+                class="service-card__image"
+              >
+            </picture>
+          </figure>
+
+          <div class="service-card__body">
+            <h3 class="service-card__title">③グループで楽しむ</h3>
+            <p class="service-card__text">
+              ご家族やご友人と一緒に思い出を作れる、
+              参加しやすい定番プランです。
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       About
+  ========================== -->
+  <section class="about js-bubble-section" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about__container">
+        <div class="about__head">
+          <p class="about__eyebrow">About</p>
+          <h2 class="about__title" id="about-title">
+            ”安心・快適・親しみやすさ” を追求
+          </h2>
+          <p class="about__lead">
+            沖縄の海をもっと身近に楽しんでいただけるように、
+            はじめての方にも寄り添った体験づくりを大切にしています。
+          </p>
+        </div>
+
+        <div class="about__body">
+          <div class="about__visual">
+            <picture>
+              <source srcset="img/about-ocean.webp" type="image/webp">
+              <img
+                src="img/about-ocean.jpg"
+                alt="沖縄の海辺の風景"
+                class="about__image"
+              >
+            </picture>
+          </div>
+
+          <div class="about__info">
+            <h3 class="about__info-title">
+              はじめてでも相談しやすい、迷わない
+            </h3>
+            <p class="about__info-text">
+              体験内容や当日の流れがわかりやすく、
+              予約前の不安や小さな疑問も相談しやすい。
+              そんな安心感のあるサービスを目指しています。
+            </p>
+
+            <ul class="about__points" aria-label="特徴一覧">
+              <li class="about__point">那覇空港からアクセスしやすい立地</li>
+              <li class="about__point">初心者から経験者まで幅広く対応</li>
+              <li class="about__point">家族や友人とも楽しみやすいプラン</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       ギャラリー
+  ========================== -->
+  <section class="gallery js-bubble-section" id="gallery" aria-labelledby="gallery-title">
+    <div class="container gallery__container">
+      <div class="gallery__head">
+        <p class="gallery__eyebrow">GALLERY</p>
+        <h2 class="gallery__title" id="gallery-title">
+          沖縄の海で出会う、やさしい時間
+        </h2>
+        <p class="gallery__text">
+          写真を通して、体験の雰囲気や旅の空気感をお届けします。
+        </p>
+      </div>
+
+      <div class="gallery__layout">
+        <article class="gallery__card gallery__card--main">
+          <button
+            class="gallery__trigger"
+            type="button"
+            data-modal-image="img/gallery1.jpg"
+            data-modal-alt="沖縄の海のメインビジュアル"
+            aria-label="画像を拡大表示"
+          >
+            <img
+              class="gallery__image"
+              src="img/gallery1.jpg"
+              alt="沖縄の海のメインビジュアル"
+            >
+          </button>
+        </article>
+
+        <div class="gallery__side">
+          <article class="gallery__card gallery__card--wide">
+            <button
+              class="gallery__trigger"
+              type="button"
+              data-modal-image="img/gallery2.jpg"
+              data-modal-alt="海辺で過ごす体験風景"
+              aria-label="画像を拡大表示"
+            >
+              <img
+                class="gallery__image"
+                src="img/gallery2.jpg"
+                alt="海辺で過ごす体験風景"
+              >
+            </button>
+          </article>
+
+          <div class="gallery__subgrid">
+            <article class="gallery__card gallery__card--small">
+              <button
+                class="gallery__trigger"
+                type="button"
+                data-modal-image="img/gallery3.jpg"
+                data-modal-alt="沖縄の透明な海の様子"
+                aria-label="画像を拡大表示"
+              >
+                <img
+                  class="gallery__image"
+                  src="img/gallery3.jpg"
+                  alt="沖縄の透明な海の様子"
+                >
+              </button>
+            </article>
+
+            <article class="gallery__card gallery__card--small">
+              <button
+                class="gallery__trigger"
+                type="button"
+                data-modal-image="img/gallery4.jpg"
+                data-modal-alt="旅の思い出になる海の風景"
+                aria-label="画像を拡大表示"
+              >
+                <img
+                  class="gallery__image"
+                  src="img/gallery4.jpg"
+                  alt="旅の思い出になる海の風景"
+                >
+              </button>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       お知らせ
+  ========================== -->
+  <section class="news js-bubble-section" id="news" aria-labelledby="news-title">
+    <div class="container">
+      <div class="news__container">
+        <div class="news__head">
+          <p class="news__eyebrow">News</p>
+          <h2 class="news__title" id="news-title">
+            お知らせ・ブログ
+          </h2>
+          <p class="news__text">
+            最新のお知らせや、海の魅力を伝える読みものをお届けします。
+          </p>
+        </div>
+
+        <ul class="news__list">
+          <li class="news__item">
+            <a href="#" class="news__link">
+              <time class="news__date" datetime="2026-03-01">2026.03.01</time>
+              <p class="news__item-title">春の体験プラン受付スタートのお知らせ</p>
+            </a>
+          </li>
+          <li class="news__item">
+            <a href="#" class="news__link">
+              <time class="news__date" datetime="2026-02-18">2026.02.18</time>
+              <p class="news__item-title">はじめての方へ、当日の流れをご紹介します</p>
+            </a>
+          </li>
+          <li class="news__item">
+            <a href="#" class="news__link">
+              <time class="news__date" datetime="2026-02-05">2026.02.05</time>
+              <p class="news__item-title">沖縄の海をもっと楽しむための過ごし方</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       CTA / Contact
+  ========================== -->
+  <section class="contact-cta js-bubble-section" id="access" aria-labelledby="access-title">
+    <div class="container">
+      <div class="contact-cta__panel">
+        <div class="contact-cta__body">
+          <div class="contact-cta__content">
+            <p class="contact-cta__eyebrow">CONTACT</p>
+            <h2 class="contact-cta__title" id="access-title">
+              まずは気軽に相談してみる
+            </h2>
+            <p class="contact-cta__lead">
+              はじめての方でも安心してご参加いただけるよう、
+              ご予約前のご質問やご相談も受け付けています。
+              気になることがあれば、お好きな方法でお気軽にご連絡ください。
+            </p>
+            <p class="contact-cta__tel">TEL:098-xxxx-xxxx</p>
+
+            <div class="contact-cta__actions">
+              <a href="#" class="contact-cta__button contact-cta__button--mail">メールで相談</a>
+              <a href="#" class="contact-cta__button contact-cta__button--line">LINEで相談</a>
+            </div>
+          </div>
+
+          <div class="contact-cta__aside">
+            <address class="contact-cta__shop">
+              <p class="contact-cta__shop-name">SEA FAMILLE</p>
+
+              <div class="contact-cta__shop-row">
+                <span class="contact-cta__shop-label">OPEN</span>
+                <span class="contact-cta__shop-hours">9:00 - 18:00</span>
+              </div>
+
+              <p class="contact-cta__shop-address">
+                沖縄県那覇市〇〇 1-2-3
+              </p>
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       フッター
+  ========================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__container">
+        <p class="site-footer__copyright">© 2026 SEA FAMILLE</p>
+
+        <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+          <ul class="site-footer__nav-list">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Access</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================
+       戻るボタン（注意：js呼び出しより前に置く）
+  ========================== -->
+  <a href="#page-top" class="back-to-top" aria-label="ページ上部へ戻る">
+    <span class="back-to-top__icon" aria-hidden="true">↑</span>
+  </a>
+
+  <!-- =========================
+       モーダル本体（注意：js呼び出しより前に置く）
+  ========================== -->
+  <div class="gallery-modal" id="gallery-modal" aria-hidden="true">
+    <button class="gallery-modal__overlay" type="button" aria-label="モーダルを閉じる"></button>
+
+    <div
+      class="gallery-modal__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-label="ギャラリー画像の拡大表示"
+    >
+      <button class="gallery-modal__close" type="button" aria-label="モーダルを閉じる">×</button>
+
+      <div class="gallery-modal__body">
+        <img class="gallery-modal__image" src="" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================
+       JS:戻るボタン
+  ========================== -->
+  <script src="js/back-to-top.js"></script>
+
+  <!-- =========================
+       JS:ハンバーガー
+  ========================== -->
+  <script src="js/header.js"></script>
+
+  <!-- =========================
+       JS:ギャラリー用モーダル
+  ========================== -->
+  <script src="js/gallery-modal.js"></script>
+
+  <!-- =========================
+       JS:泡アニメーション
+  ========================== -->
+  <script src="js/section-bubbles.js"></script>
+</body>
+</html>

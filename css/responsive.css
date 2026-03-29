@@ -1,0 +1,530 @@
+@charset "utf-8";
+
+/* =========================================================
+   responsive.css
+   責務：
+   - ブレークポイントごとの差分のみ
+   - 土台の構造は layout.css、見た目は top.css を前提に上書き
+   ========================================================= */
+
+/* PCではSP専用パーツを見せない */
+.site-header__menu-label,
+.site-header__menu-footer{
+  display: none;
+}
+
+/* =========================================================
+   1) 1199px 以下
+   ========================================================= */
+@media (max-width: 1199px){
+  .container{
+    width: min(100% - 64px, 1200px);
+  }
+
+  .hero__container{
+    grid-template-columns: 1fr 0.92fr;
+    gap: 32px;
+    min-height: auto;
+    padding: 56px 48px;
+  }
+
+  .hero__content{
+    padding: 32px;
+  }
+
+  .service__grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .about__body{
+    grid-template-columns: minmax(300px, 460px) minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .gallery__layout{
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  }
+
+  .contact-cta__body{
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .contact-cta__shop{
+    padding: 22px 20px;
+  }
+
+  .site-footer__container{
+    padding-inline: 20px;
+  }
+}
+
+/* =========================================================
+   2) 991px 以下
+   ========================================================= */
+@media (max-width: 991px){
+  section{
+    padding: 80px 0;
+  }
+
+  .site-header__container{
+    min-height: 80px;
+    gap: 16px;
+  }
+
+  .hero{
+    padding-top: 16px;
+  }
+
+  .hero__container{
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px 36px;
+  }
+
+  .hero__content{
+    max-width: none;
+  }
+
+  .hero__visual{
+    max-width: 100%;
+    justify-self: stretch;
+  }
+
+  .intro__box{
+    padding: 40px 32px;
+  }
+
+  .service__grid{
+    grid-template-columns: 1fr;
+  }
+
+  .about__body{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about__visual{
+    max-width: 720px;
+  }
+
+  .gallery__layout{
+    grid-template-columns: 1fr;
+  }
+
+  .gallery__card--main,
+  .gallery__card--wide,
+  .gallery__card--small{
+    min-height: 240px;
+  }
+
+  .contact-cta{
+    padding: 0 0 48px;
+  }
+
+  .contact-cta__body{
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .contact-cta__lead{
+    max-width: none;
+  }
+
+  .contact-cta__aside,
+  .contact-cta__shop{
+    width: 100%;
+  }
+
+  .site-footer__container{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 12px;
+    min-height: auto;
+    padding-block: 18px;
+  }
+
+  .site-footer__nav-list{
+    justify-content: flex-start;
+  }
+}
+
+/* =========================================================
+   3) 767px 以下
+   ========================================================= */
+@media (max-width: 767px){
+  .container{
+    width: calc(100% - 32px);
+  }
+
+  section{
+    padding: 64px 0;
+  }
+
+  .intro__box,
+  .service-card,
+  .about__visual{
+    border-radius: 20px;
+  }
+
+  .service__header,
+  .about__head,
+  .gallery__head,
+  .news__head{
+    margin-bottom: 0;
+  }
+
+  /* Header / SP menu */
+  .site-header__container{
+    position: relative;
+    justify-content: space-between;
+    min-height: 72px;
+  }
+
+  .site-header__toggle{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .site-header__nav{
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    left: 0;
+    z-index: 130;
+    display: none;
+    margin-left: 0;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+  }
+
+  .site-header.is-menu-open .site-header__nav{
+    display: block;
+  }
+
+  .site-header__nav-list{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0 28px;
+  }
+
+  .site-header__nav-item{
+    display: block;
+  }
+
+  .site-header__nav-item a{
+    display: block;
+    padding: 14px 12px;
+  }
+
+  .site-header__menu-label{
+    display: block;
+    margin: 0;
+    padding: 24px 28px 10px;
+    color: #5d89a0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.12em;
+  }
+
+  .site-header__menu-footer{
+    display: block;
+    padding: 16px 28px 24px;
+  }
+
+  .site-header__cta--desktop{
+    display: none;
+  }
+
+  .site-header__cta--menu{
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .site-header__overlay{
+    position: fixed;
+    top: 72px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 90;
+    display: none;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+  }
+
+  body.is-menu-open .site-header__overlay{
+    display: block;
+  }
+
+  body.is-menu-open{
+    overflow: hidden;
+  }
+
+  /* Hero */
+  .hero__container{
+    padding: 24px 20px;
+    border-radius: 24px;
+  }
+
+  .hero__content{
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .hero__title{
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 1.55rem + 2vw, 2.75rem);
+  }
+
+  .hero__text{
+    margin-bottom: 28px;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .hero__actions{
+    gap: 12px;
+  }
+
+  .hero__visual{
+    border-radius: 24px;
+    aspect-ratio: 16 / 11;
+  }
+
+  .hero__visual-title{
+    left: 16px;
+    right: 16px;
+    bottom: 56px;
+    font-size: 1.25rem;
+  }
+
+  .hero__visual-text{
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    font-size: 0.9375rem;
+  }
+
+  /* Intro */
+  .intro__box{
+    padding: 28px 20px;
+  }
+
+  /* Service */
+  .service-card{
+    padding: 24px 20px;
+  }
+
+  .service-card__media{
+    margin-bottom: 18px;
+  }
+
+  /* About */
+  .about__body{
+    gap: 24px;
+  }
+
+  .about__visual{
+    padding: 10px;
+  }
+
+  .about__point{
+    padding: 14px 16px 14px 40px;
+  }
+
+  /* Gallery */
+  .gallery__container,
+  .news__container{
+    gap: 20px;
+  }
+
+  .gallery__layout,
+  .gallery__side,
+  .gallery__subgrid{
+    gap: 10px;
+  }
+
+  .gallery__subgrid{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery__card{
+    border-radius: 14px;
+  }
+
+  .gallery__card--main{
+    min-height: 240px;
+  }
+
+  .gallery__card--wide,
+  .gallery__card--small{
+    min-height: 160px;
+  }
+
+  .gallery-modal__dialog{
+    width: calc(100vw - 24px);
+    padding: 12px;
+  }
+
+  .gallery-modal__body{
+    border-radius: 14px;
+  }
+
+  .gallery-modal__close{
+    top: -4px;
+    right: -4px;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* News */
+  .news__link{
+    padding: 16px;
+  }
+
+  .news__item-title{
+    font-size: 1rem;
+  }
+
+  /* CTA */
+  .contact-cta{
+    padding: 0 0 32px;
+  }
+
+  .contact-cta__panel{
+    border-radius: 20px;
+  }
+
+  .contact-cta__body{
+    gap: 18px;
+    padding: 22px 18px 18px;
+  }
+
+  .contact-cta__title{
+    font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2rem);
+    line-height: 1.3;
+  }
+
+  .contact-cta__lead{
+    font-size: 0.9375rem;
+    line-height: 1.8;
+  }
+
+  .contact-cta__tel{
+    margin-top: 12px;
+    font-size: clamp(1.5rem, 1.2rem + 1.6vw, 1.875rem);
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .contact-cta__actions{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .contact-cta__button{
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding-inline: 16px;
+  }
+
+  .contact-cta__shop{
+    gap: 8px;
+    padding: 18px 16px 16px;
+    border-radius: 16px;
+  }
+
+  .contact-cta__shop-name{
+    font-size: clamp(1.375rem, 1.15rem + 1vw, 1.75rem);
+  }
+
+  .contact-cta__shop-row{
+    gap: 8px;
+  }
+
+  .contact-cta__shop-hours{
+    font-size: 1.5rem;
+  }
+
+  .contact-cta__shop-address{
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  /* Footer */
+  .site-footer{
+    padding-bottom: 20px;
+  }
+
+  .site-footer__container{
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .site-footer__copyright,
+  .site-footer__nav a{
+    font-size: 0.875rem;
+  }
+
+  .site-footer__nav-list{
+    gap: 8px 12px;
+  }
+
+  /* Back to top */
+  .back-to-top{
+    right: 16px;
+    bottom: 88px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* =========================================================
+   4) 479px 以下
+   ========================================================= */
+@media (max-width: 479px){
+  .hero__title,
+  .intro__title,
+  .service__title,
+  .about__title,
+  .gallery__title,
+  .news__title{
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .gallery__subgrid{
+    grid-template-columns: 1fr;
+  }
+
+  .gallery__card--small{
+    min-height: 180px;
+  }
+
+  .contact-cta__title{
+    font-size: 1.5rem;
+  }
+
+  .contact-cta__tel{
+    font-size: 1.375rem;
+  }
+
+  .contact-cta__shop-hours{
+    font-size: 1.25rem;
+  }
+}
