@@ -61,11 +61,11 @@
         </ul>
 
         <div class="site-header__menu-footer">
-          <a href="#" class="site-header__cta site-header__cta--menu">Contact</a>
+          <a href="#access" class="site-header__cta site-header__cta--menu">Contact</a>
         </div>
       </nav>
 
-      <a href="#" class="site-header__cta site-header__cta--desktop">Contact</a>
+      <a href="#access" class="site-header__cta site-header__cta--desktop">Contact</a>
     </div>
   </header>
 
@@ -92,8 +92,12 @@
         </p>
 
         <div class="hero__actions">
-          <a href="#plan" class="btn btn--primary">プランを見る</a>
-          <a href="#about" class="btn btn--ghost">はじめての方へ</a>
+          <a href="#plan" class="hero-cta__button hero-cta__button--plan">プランを見る</a>
+
+          <a href="#about" class="hero__action hero__action--about">
+            <span class="hero__action-text">はじめての方へ</span>
+            <span class="hero__action-icon" aria-hidden="true">🔰</span>
+          </a>
         </div>
       </div>
 
@@ -397,19 +401,19 @@
 
         <ul class="news__list">
           <li class="news__item">
-            <a href="#" class="news__link">
+            <a href="#news" class="news__link">
               <time class="news__date" datetime="2026-03-01">2026.03.01</time>
               <p class="news__item-title">春の体験プラン受付スタートのお知らせ</p>
             </a>
           </li>
           <li class="news__item">
-            <a href="#" class="news__link">
+            <a href="#news" class="news__link">
               <time class="news__date" datetime="2026-02-18">2026.02.18</time>
               <p class="news__item-title">はじめての方へ、当日の流れをご紹介します</p>
             </a>
           </li>
           <li class="news__item">
-            <a href="#" class="news__link">
+            <a href="#news" class="news__link">
               <time class="news__date" datetime="2026-02-05">2026.02.05</time>
               <p class="news__item-title">沖縄の海をもっと楽しむための過ごし方</p>
             </a>
@@ -436,11 +440,13 @@
               ご予約前のご質問やご相談も受け付けています。
               気になることがあれば、お好きな方法でお気軽にご連絡ください。
             </p>
-            <p class="contact-cta__tel">TEL:098-xxxx-xxxx</p>
+            <a href="tel:098-xxxx-xxxx" class="contact-cta__tel">
+              TEL:098-xxxx-xxxx
+            </a>
 
             <div class="contact-cta__actions">
-              <a href="#" class="contact-cta__button contact-cta__button--mail">メールで相談</a>
-              <a href="#" class="contact-cta__button contact-cta__button--line">LINEで相談</a>
+              <a href="#access" class="contact-cta__button contact-cta__button--mail">メールで相談</a>
+              <a href="#access" class="contact-cta__button contact-cta__button--line">LINEで相談</a>
             </div>
           </div>
 
@@ -466,16 +472,16 @@
   <!-- =========================
        フッター
   ========================== -->
-  <footer class="site-footer">
+  <footer class="site-footer" id="foot">
     <div class="container">
       <div class="site-footer__container">
         <p class="site-footer__copyright">© 2026 SEA FAMILLE</p>
 
         <nav class="site-footer__nav" aria-label="フッターナビゲーション">
           <ul class="site-footer__nav-list">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Access</a></li>
-            <li><a href="#">Instagram</a></li>
+            <li><a href="#foot">Privacy Policy</a></li>
+            <li><a href="#access">Access</a></li>
+            <li><a href="#foot">Instagram</a></li>
           </ul>
         </nav>
       </div>

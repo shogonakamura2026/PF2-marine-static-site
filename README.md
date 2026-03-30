@@ -118,8 +118,8 @@ SEOの観点では、
 
 ## 使用環境
 
-Figma
-VS Code
+- Figma
+- VS Code
 
 ## 実装ポイント
 

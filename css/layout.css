@@ -132,6 +132,36 @@ section{
   border-radius: 24px;
 }
 
+.hero__action{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-cta__button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  min-height: 42px;
+  padding: 0 22px;
+  border-radius: 999px;
+}
+
+.hero__action--about{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero__action-icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
 .hero__visual{
   position: relative;
   width: 100%;
