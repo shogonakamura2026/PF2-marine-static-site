@@ -141,3 +141,10 @@ marine-static-site/
 ├─ img/
 └─ video/
 
+## 更新情報
+2026/4/1
+- layout.css、common.cssにあったTopページ用CSSを分離、正しい責務のCSS（top.css）へ統合
+- ファビコン、スマホ用アイコン追加
+-  JS:URLコピー時アンカーがリンクに含まれないよう対策
+
+
