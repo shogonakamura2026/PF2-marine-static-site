@@ -145,3 +145,6 @@ marine-static-site/
 - layout.css と common.css にあったトップページ用 CSS を分離し、責務を整理したうえで top.css へ統合
 - ファビコン、スマホ用アイコンを追加
 - JS にて、URL コピー時にアンカーがリンクへ含まれないよう対策
+
+### 2026/4/16
+- top.css、common.cssの重複部分を統合、削除
